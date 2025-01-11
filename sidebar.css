@@ -1,0 +1,107 @@
+/* Container for hamburger and sidebar */
+#toc-container {
+	position: fixed;
+	top: 3.5rem;
+	/* Position below topbar */
+	right: 20px;
+	/* transform: translateY(-50%); */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: 9999;
+}
+
+/* Hamburger button styling */
+#hamburger {
+	cursor: pointer;
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	border-radius: 4px 0 0 4px;
+	font-size: 20px;
+}
+
+/* Hide the hamburger button when hovering over the container */
+#toc-container:hover #hamburger {
+	display: none;
+}
+
+/* Sidebar styling */
+#prompt-sidebar {
+	border-radius: 4px 0 0 4px;
+	display: none;
+	/* hidden by default */
+	height: 100vh;
+	/* Full viewport height */
+	/* Retain other styles as needed: */
+	width: 350px;
+	/* or any desired width */
+	max-height: 70vh;
+	/* remove or adjust if conflicting */
+	overflow-y: auto;
+	background-color: #f9f9f9;
+	/* border-left: 1px solid #ccc; */
+	padding: 10px;
+	box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+	margin-top: 5px;
+}
+
+#prompt-sidebar h2 {
+	margin-top: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+#prompt-sidebar ul {
+	list-style: none;
+	padding-left: 0;
+	overflow-wrap: break-word;
+}
+
+/* Style each list item within the sidebar with rounded corners */
+#prompt-sidebar li {
+	padding: 8px;
+	margin-bottom: 8px;
+	background-color: #fff;
+	/* Optional: background to highlight the item */
+	border-radius: 8px;
+	/* Rounded corners for the entire item */
+	list-style: none;
+	transition: background-color 0.3s;
+}
+
+/* Visual changes when hovering over a list item */
+#prompt-sidebar li:hover {
+	background-color: #e0e0e0;
+}
+
+/* Style for the active/selected sidebar link */
+#prompt-sidebar li.active {
+	background-color: #d0d0d0;
+	/* Highlight background */
+	font-weight: bold;
+	border-radius: 4px;
+}
+
+/* Style the links within the sidebar list items */
+#prompt-sidebar a {
+	display: block;
+	color: #333;
+	text-decoration: none;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	/* Inherit rounded corners if needed */
+	border-radius: 8px;
+	padding: 4px 0;
+}
+
+
+/* Visual changes when hovering over a link (optional) */
+#prompt-sidebar a:hover {
+	text-decoration: underline;
+}
+
+/* Show sidebar on hover of container */
+#toc-container:hover #prompt-sidebar {
+	display: block;
+}
