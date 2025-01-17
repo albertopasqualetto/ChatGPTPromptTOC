@@ -9,6 +9,13 @@
 	flex-direction: column;
 	align-items: flex-end;
 	z-index: 9999;
+	transition: transform 0.3s ease-in-out;
+	transform: translateX(calc(100% - 30px)); /* Change from translateX(calc(-100% + 30px)) */
+}
+
+#toc-container:hover,
+#toc-container.show-on-scroll {
+	transform: translateX(0); /* Fully visible */
 }
 
 /* Hamburger button styling */
@@ -19,11 +26,15 @@
 	padding: 10px;
 	border-radius: 4px 0 0 4px;
 	font-size: 20px;
+	opacity: 0.7;
+	transition: opacity 0.3s ease-in-out;
 }
 
 /* Hide the hamburger button when hovering over the container */
-#toc-container:hover #hamburger {
+#toc-container:hover #hamburger,
+#toc-container.show-on-scroll #hamburger {
 	display: none;
+	opacity: 1;
 }
 
 /* Sidebar styling */
@@ -44,6 +55,12 @@
 	padding: 10px;
 	box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
 	margin-top: 5px;
+}
+
+/* Show sidebar on hover OR when show-on-scroll class is present */
+#toc-container:hover #prompt-sidebar,
+#toc-container.show-on-scroll #prompt-sidebar {
+	display: block;
 }
 
 #prompt-sidebar h2 {
@@ -94,7 +111,6 @@
 	border-radius: 8px;
 	padding: 4px 0;
 }
-
 
 /* Visual changes when hovering over a link (optional) */
 #prompt-sidebar a:hover {
